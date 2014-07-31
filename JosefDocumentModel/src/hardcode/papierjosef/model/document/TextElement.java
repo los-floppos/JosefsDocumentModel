@@ -65,4 +65,6 @@ public abstract class TextElement<T> {
 	public void clearProperties() {
 		properties.clear();
 	}
+	
+	public abstract String getText();
 }
