@@ -1,5 +1,7 @@
 package hardcode.papierjosef.model.document;
 
+import hardcode.papierjosef.model.document.annotation.TextElementProperty;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,7 +12,7 @@ public abstract class TextElement<T> {
 	private List<T> list;
 	private long start;
 	private long end;
-	private Map<String, String> properties;
+	private Map<String, TextElementProperty> properties;
 	
 	/**
 	 * TODO
@@ -22,7 +24,7 @@ public abstract class TextElement<T> {
 		this.list = list;
 		this.start = start;
 		this.end = end;
-		properties = new HashMap<String, String>();		
+		properties = new HashMap<String, TextElementProperty>();		
 	} 
 	
 	public void addElement(T child, long lenght) {
@@ -50,7 +52,7 @@ public abstract class TextElement<T> {
 		this.end = ende;
 	}
 	
-	public String getProperty(String key) {
+	public TextElementProperty getProperty(String key) {
 		return properties.get(key);
 	}
 	
@@ -58,12 +60,16 @@ public abstract class TextElement<T> {
 		return properties.keySet();
 	}
 	
-	public String putProperty(String key, String value) {
-		return properties.put(key, value);
+	public TextElementProperty addProperty(TextElementProperty property) {
+		return properties.put(property.getKey(), property);
 	}
 	
 	public void clearProperties() {
 		properties.clear();
+	}
+	
+	public int size() {
+		return list.size();
 	}
 	
 	public abstract String getText();
