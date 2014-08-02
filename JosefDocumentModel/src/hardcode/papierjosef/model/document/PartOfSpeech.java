@@ -24,7 +24,7 @@ public class PartOfSpeech {
 		this.description = description;
 	}
 	
-	public String getText() {
+	public String getPartOfSpeechName() {
 		return partOfSpeech;
 	}
 	
@@ -52,7 +52,7 @@ public class PartOfSpeech {
 	 * @return boolean
 	 */
 	public boolean equals(PartOfSpeech pos) {
-		return pos.getText().equals(partOfSpeech);
+		return pos.getPartOfSpeechName().equals(partOfSpeech);
 	}
 	
 }
