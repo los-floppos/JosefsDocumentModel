@@ -1,5 +1,9 @@
 package hardcode.papierjosef.model.document;
 
+/**
+ * Represents the part of speech of a Word. A PartOfSpeech object contains a concrete and unique String, which
+ * describes this part of speech. It may contain an optional description for this part of speech.
+ */
 public class PartOfSpeech {
 	
 	private String partOfSpeech;
@@ -24,10 +28,18 @@ public class PartOfSpeech {
 		this.description = description;
 	}
 	
+	/**
+	 * Returns the part of speech's name
+	 * @return String: The part of speech's name
+	 */
 	public String getPartOfSpeechName() {
 		return partOfSpeech;
 	}
 	
+	/**
+	 * Returns the part of speech's description
+	 * @return String: The part of speech's description or an empty String, if no description is present.
+	 */
 	public String getDescription() {
 		return description;
 	}
